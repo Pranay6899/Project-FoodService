@@ -3,29 +3,7 @@ import java.util.Date;
 
 public class Main {
 	public static void main(String[] args) {
-        // Creating an instance of the Restaurant class
-		//Restaurant restaurant = new Restaurant();
-		//restaurant->obj,,restaurant.setRestaurantID(x);restrestaurant.setName(ganesh);
-		//like this write for every getter and setter
-		//public int getRestaurantID() {
-        //return restaurantID;
-   // }
-
-   // public void setRestaurantID(int restaurantID) {
-        //this.restaurantID = restaurantID;
-    //}
-
-   // public String getName() {
-        //return name;
-    //}
-
-   // public void setName(String name) {
-        //this.name = name;
-   // }
-
-   // public String getAddress() {
-    //   return address;
-    //}
+        //create restaraunt object
         Restaurant restaurant1 = new Restaurant(1, "Burger King", "123 Main St", "New York", "NY", "10001");
         Restaurant restaurant2 = new Restaurant(2, "Pizza Hut", "456 Elm St", "Los Angeles", "CA", "90001");
         Restaurant restaurant3 = new Restaurant(3, "McDonald's", "789 Oak St", "Chicago", "IL", "60601");
@@ -33,17 +11,13 @@ public class Main {
         Restaurant restaurant5 = new Restaurant(5, "Domino's", "901 Pine St", "Philadelphia", "PA", "19101");
         Restaurant restaurant6 = new Restaurant(6, "KFC", "234 Cedar Ave", "San Francisco", "CA", "94101");
         
-        Restaurant[] restaurants = {restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6};
-        for (int i = 0; i < restaurants.length; i++) {
-            System.out.println("Restaurant Details:");
-            System.out.println("ID: " + restaurants[i].getRestaurantID());
-            System.out.println("Name: " + restaurants[i].getName());
-            System.out.println("Address: " + restaurants[i].getAddress());
-            System.out.println("City: " + restaurants[i].getCity());
-            System.out.println("State: " + restaurants[i].getState());
-            System.out.println("Zip Code: " + restaurants[i].getZipCode());
-            System.out.println();
+        Restaurant[] r = {restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6};
+
+        for (int i = 0; i < r.length; i++) {
+            r[i].display();
         }
+
+        //create customer object
         System.out.print("---------CUSTOMER PART-------\n");
         Customer customer1 = new Customer(1, "John", "Doe", "johndoe@example.com", "123-456-7890", "123 Main St", "New York", "NY", "10001");
         Customer customer2 = new Customer(2, "Jane", "Smith", "janesmith@example.com", "987-654-3210", "456 Elm St", "Los Angeles", "CA", "90001");
@@ -55,6 +29,8 @@ public class Main {
         for (int i = 0; i < customers.length; i++) {
         	customers[i].display();
         }
+
+        //create order object
         System.out.print("---------ORDER PART-------\n");
         Order order1 = new Order(1, 1, 1, new Date(), 29.99);
         Order order2 = new Order(2, 2, 2, new Date(), 15.99);
@@ -64,8 +40,9 @@ public class Main {
         Order[] orders = {order1, order2, order3, order4, order5};
         for (int i = 0; i < orders.length; i++) {
             orders[i].display();
-            //orders[i] is used to access the Order object at index i in the orders array.//
-            
+        }
+        
+        //create menu object
             System.out.print("---------Menu PART-------\n");
             Menu menu1 = new Menu(1, 1, "Cheeseburger", 5.99);
             Menu menu2 = new Menu(2, 1, "Veggie Burger", 6.99);
@@ -75,20 +52,13 @@ public class Main {
             Menu menu6 = new Menu(6, 3, "McNuggets", 3.99);
 
             Menu[] menus = {menu1, menu2, menu3, menu4, menu5, menu6};
+
             for (int j = 0; j < menus.length; j++) {
                 menus[j].display();
-                
-                
-              //  System.out.println("Driver Details: " +
-                 //       "ID: " + driver.getDriverID() +
-                  //      ", First Name: " + driver.getFirstName() +
-                //        ", Last Name: " + driver.getLastName() +
-               //         ", Email: " + driver.getEmail() +
-              //          ", Phone: " + driver.getPhone() +for one driver1 details
-            //            ", License Number: " + driver.getLicenseNumber());
-           // }for this we need to follows above comments
-       // }
-                System.out.print("---------Driver PART-------\n");
+            }
+
+            //create driver object
+             System.out.print("---------Driver PART-------\n");
 
                 Driver driver1 = new Driver(1, "John", "Doe", "john.doe@example.com", "555-1234", "D12345678");
                 Driver driver2 = new Driver(2, "Jane", "Smith", "jane.smith@example.com", "555-5678", "D87654321");
@@ -101,8 +71,8 @@ public class Main {
                 for (int k = 0; k < drivers.length; k++) {
                     drivers[k].display();
                 }
-            }
-            
+
+            //create delivery objects
             System.out.print("---------Delivery PART-------\n");
             Delivery delivery1 = new Delivery(1, 1, 1, new Date(), "10:30 AM");
             Delivery delivery2 = new Delivery(2, 2, 2, new Date(), "11:00 AM");
@@ -115,16 +85,21 @@ public class Main {
             for (int k = 0; k < deliveries.length; k++) {
                 deliveries[k].display();
             }
+
+            //create payment objects
             System.out.print("---------Payment PART-------\n");
             Payment payment1 = new Payment(1, 1, "Credit Card", new Date(), 29.99);
             Payment payment2 = new Payment(2, 2, "PayPal", new Date(), 19.99);
             Payment payment3 = new Payment(3, 3, "Cash", new Date(), 24.99);
             Payment payment4 = new Payment(4, 4, "Credit Card", new Date(), 34.99);
             Payment payment5 = new Payment(5, 5, "Debit Card", new Date(), 22.99);
+
             Payment[] payment = {payment1,payment2,payment3,payment4,payment5};
+
             for (int k = 0; k < payment.length; k++) {                
             	payment[k].display();  
             }
+            //creating rating objects an accessing
             Rating rating1 = new Rating(1, 1, "5 stars", "Great service!");
             Rating rating2 = new Rating(2, 2, "4 stars", "Good food, but late delivery");
             Rating rating3 = new Rating(3, 3, "3 stars", "Average experience");
@@ -140,4 +115,3 @@ public class Main {
             rating5.display();
         }
 	}
-}
