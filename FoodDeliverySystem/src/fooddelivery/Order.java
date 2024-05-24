@@ -8,9 +8,7 @@ public class Order {
     private int restaurantID;
     private Date orderDate;
     private double totalAmount;
-
-    public Order() {}
-
+    
     public Order(int orderID, int customerID, int restaurantID, Date orderDate, double totalAmount) {
         this.orderID = orderID;
         this.customerID = customerID;
